@@ -1,0 +1,13 @@
+main {
+    width: 100%;
+    @include flexbox(center, center, column, 1rem);
+    .text-container {
+        @include flexbox(0, 0, column, 1.5rem);
+        h1 { line-height: 1.2; } 
+    }
+    .image-container {
+        width: 100%;
+        @include flexbox(center, center, 0, 0);
+        .image { width: 400px; height: auto; }
+    }
+}
