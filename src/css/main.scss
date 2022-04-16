@@ -4,6 +4,8 @@
 @import "./components/mixins";
 @import "./components/layout/header";
 @import "./components/layout/home";
+@import "./components/layout/gallery";
+@import "./components/layout/footer";
 
 *, *::before, *::after {
     margin: 0;
@@ -20,13 +22,13 @@ body {
     width: 100%;
     font-family: $font;
     color: $white;
-    h1 { font-size: clamp(2.75rem, 4vw, 8rem); font-weight: 700; }
-    h2 { font-size: clamp(2.25rem, 3vw, 6rem); font-weight: 700; }
-    h3 { font-size: clamp(1.5rem, 2.25vw, 3.75rem); font-weight: 400; }
-    h4 { font-size: clamp(2.25rem, 3.75vw, 6rem); font-weight: 700; }
+    h1 { font-size: clamp(2.5rem, 3.5vw, 6rem); font-weight: 700; }
+    h2 { font-size: clamp(2.25rem, 3vw, 5rem); font-weight: 700; }
+    h3 { font-size: clamp(1.5rem, 2.25vw, 3.75rem); font-weight: 500; }
+    li { font-weight: 700; }
     p, label {
-        font-size: clamp(1.15rem, 1.5vw, 2rem);
-        font-weight: 400;
+        font-size: clamp(1rem, 1.5vw, 2rem);
+        font-weight: 500;
         line-height: 1.5;
     }
     a {
@@ -37,11 +39,30 @@ body {
         }
     }
     span { color: $green; }
-    section, main { padding: 5rem 1.5rem; }
+    main { padding: 5rem 1.5rem 0 1.5rem; }
     section, main { width: 100%; }
     svg {
         fill: $white;
         &:hover, &:active { transition: fill .5s ease; fill: $green; }
     }
     img { width: 100%; height: auto; }
+    button {
+        border: 0;
+        outline: none;
+        cursor: pointer;
+        padding: .5rem 1rem;
+        border-radius: .2rem;
+        margin: .25rem;
+    }
+    .reveal {
+        position: relative;
+        transform: translateY(150px);
+        opacity: 0;
+        transition: all 1s ease-in-out;
+    }
+      
+    .reveal.reveal-on {
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }
