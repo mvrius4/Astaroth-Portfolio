@@ -1,0 +1,48 @@
+.gallery {
+    width: 100%;
+    padding: 0 1.5rem 5rem 1.5rem;
+    @include flexbox(center, 0, column, 1rem);
+    .gallery__btn-container {
+        width: 80%;
+        @include flexbox(center, space-evenly, row, 1rem);
+        flex-wrap: wrap;
+        button.primary {
+            background-color: transparent;
+            color: $white;
+            border-bottom: 3px solid $green;
+            font-weight: 700;
+            transition: color .5s ease;
+            &:hover, &:focus {
+                color: $green;
+            }
+        }
+    }
+    .tab.active {
+        display: block;
+    }
+    .tab {
+        padding: 2rem 0;
+        display: none;
+        .gallery__creations {
+            @include flexbox(center, center, column, 2rem);
+            .gallery__latest, .gallery__all-work {
+                @include flexbox(center, 0, column, 1rem);
+                text-align: center;
+                .img-lg {
+                    width: 90%;
+                    background: $black;
+                    aspect-ratio: 16 / 9;
+                }
+                .all-work__creations {
+                    @include flexbox(center, space-evenly, row, 1rem);
+                    flex-wrap: wrap;
+                    .img-sm {
+                        width: 150px;
+                        background: $black;
+                        aspect-ratio: 1 / 1;
+                    }
+                }
+            }
+        }
+    }
+}
