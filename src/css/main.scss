@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap');
 
 @import "./components/variables";
 @import "./components/mixins";
@@ -11,12 +11,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 @include reset;
 
 body {
-    background: rgb(29,31,33);
     background: linear-gradient(90deg, rgba(29,31,33,1) 0%, rgba(56,58,61,1) 100%);
     min-height: 100vh;
     width: 100%;
@@ -27,7 +27,7 @@ body {
     h3 { font-size: clamp(1.5rem, 2.25vw, 3.75rem); font-weight: 500; }
     li { font-weight: 700; }
     p, label {
-        font-size: clamp(1rem, 1.5vw, 2rem);
+        font-size: clamp(1rem, 1.25vw, 1.65rem);
         font-weight: 500;
         line-height: 1.5;
     }
@@ -39,7 +39,6 @@ body {
         }
     }
     span { color: $green; }
-    main { padding: 5rem 1.5rem 0 1.5rem; }
     section, main { width: 100%; }
     svg {
         fill: $white;
@@ -53,16 +52,20 @@ body {
         padding: .5rem 1rem;
         border-radius: .2rem;
         margin: .25rem;
+        font-size: clamp(.85rem, 1.2vw, 1.4rem);
     }
-    .reveal {
-        position: relative;
-        transform: translateY(150px);
-        opacity: 0;
-        transition: all 1s ease-in-out;
+    .blob { 
+        position: absolute;
+        width: 400px;
+        z-index: -1;
+        opacity: .05;
+        left: -40%;
+        top: -20%;
     }
-      
-    .reveal.reveal-on {
-        transform: translateY(0px);
-        opacity: 1;
+    @media (min-width: $size) {
+        .blob {
+            width: 1000px;
+            top: -25%;
+        }
     }
 }

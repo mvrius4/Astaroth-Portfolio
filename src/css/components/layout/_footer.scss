@@ -1,4 +1,5 @@
 footer {
+    width: 100%;
     padding: 1rem;
-    @include flexbox(center, center, 0, 0);
+    text-align: center;
 }

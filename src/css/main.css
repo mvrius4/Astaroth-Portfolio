@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap");
 header {
   width: 100%;
   padding: 1.5rem;
@@ -16,6 +16,15 @@ header {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 
 header .header__main {
@@ -49,6 +58,12 @@ header .header__main .logo {
   font-weight: 700;
 }
 
+@media (min-width: 768px) {
+  header .header__main .header__nav-toggle-close, header .header__main .header__nav-toggle-open {
+    display: none;
+  }
+}
+
 header nav.active {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -64,6 +79,18 @@ header nav {
   top: 0;
   -webkit-animation: fade .5s ease;
           animation: fade .5s ease;
+}
+
+@media (min-width: 768px) {
+  header nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background: transparent;
+    position: relative;
+    height: auto;
+    width: auto;
+  }
 }
 
 header nav svg {
@@ -91,9 +118,29 @@ header nav ul {
   gap: 5rem;
 }
 
+@media (min-width: 768px) {
+  header nav ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 2rem;
+  }
+  header nav ul .header__nav-toggle-close {
+    display: none;
+  }
+}
+
 header nav ul li {
   -webkit-animation: fade 1s;
           animation: fade 1s;
+}
+
+@media (min-width: 768px) {
+  header nav ul li {
+    -webkit-animation: none;
+            animation: none;
+  }
 }
 
 @-webkit-keyframes fade {
@@ -124,7 +171,7 @@ header nav ul li {
 
 main {
   width: 100%;
-  padding-top: 5rem;
+  padding: 5rem 1.5rem 0 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -140,6 +187,19 @@ main {
           flex-direction: column;
 }
 
+@media (min-width: 768px) {
+  main {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 0 1.5rem;
+  }
+}
+
 main .text-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -153,6 +213,12 @@ main .text-container {
 
 main .text-container h1 {
   line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  main .text-container {
+    width: 60%;
+  }
 }
 
 main .image-container {
@@ -171,6 +237,27 @@ main .image-container {
 main .image-container .image {
   width: 350px;
   height: auto;
+}
+
+@media (min-width: 768px) {
+  main .image-container {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    width: 40%;
+  }
+}
+
+@media (min-width: 920px) {
+  main .image-container .image {
+    width: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  main .image-container .image {
+    width: 500px;
+  }
 }
 
 .gallery {
@@ -248,7 +335,20 @@ main .image-container .image {
   gap: 2rem;
 }
 
+@media (min-width: 768px) {
+  .gallery .tab .gallery__creations {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
 .gallery .tab .gallery__creations .gallery__latest, .gallery .tab .gallery__creations .gallery__all-work {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -264,9 +364,21 @@ main .image-container .image {
 }
 
 .gallery .tab .gallery__creations .gallery__latest .img-lg, .gallery .tab .gallery__creations .gallery__all-work .img-lg {
-  width: 90%;
+  width: 300px;
   background: #1d1f21;
   aspect-ratio: 16 / 9;
+}
+
+@media (min-width: 920px) {
+  .gallery .tab .gallery__creations .gallery__latest .img-lg, .gallery .tab .gallery__creations .gallery__all-work .img-lg {
+    width: 450px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery .tab .gallery__creations .gallery__latest .img-lg, .gallery .tab .gallery__creations .gallery__all-work .img-lg {
+    width: 600px;
+  }
 }
 
 .gallery .tab .gallery__creations .gallery__latest .all-work__creations, .gallery .tab .gallery__creations .gallery__all-work .all-work__creations {
@@ -295,16 +407,9 @@ main .image-container .image {
 }
 
 footer {
+  width: 100%;
   padding: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  text-align: center;
 }
 
 *, *::before, *::after {
@@ -312,6 +417,7 @@ footer {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -328,12 +434,11 @@ button {
 }
 
 body {
-  background: #1d1f21;
   background: -webkit-gradient(linear, left top, right top, from(#1d1f21), to(#383a3d));
   background: linear-gradient(90deg, #1d1f21 0%, #383a3d 100%);
   min-height: 100vh;
   width: 100%;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #e6e6e6;
 }
 
@@ -357,7 +462,7 @@ body li {
 }
 
 body p, body label {
-  font-size: clamp(1rem, 1.5vw, 2rem);
+  font-size: clamp(1rem, 1.25vw, 1.65rem);
   font-weight: 500;
   line-height: 1.5;
 }
@@ -374,10 +479,6 @@ body a:hover, body a:focus {
 
 body span {
   color: #00ff75;
-}
-
-body main {
-  padding: 5rem 1.5rem 0 1.5rem;
 }
 
 body section, body main {
@@ -406,20 +507,22 @@ body button {
   padding: .5rem 1rem;
   border-radius: .2rem;
   margin: .25rem;
+  font-size: clamp(0.85rem, 1.2vw, 1.4rem);
 }
 
-body .reveal {
-  position: relative;
-  -webkit-transform: translateY(150px);
-          transform: translateY(150px);
-  opacity: 0;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
+body .blob {
+  position: absolute;
+  width: 400px;
+  z-index: -1;
+  opacity: .05;
+  left: -40%;
+  top: -20%;
 }
 
-body .reveal.reveal-on {
-  -webkit-transform: translateY(0px);
-          transform: translateY(0px);
-  opacity: 1;
+@media (min-width: 768px) {
+  body .blob {
+    width: 1000px;
+    top: -25%;
+  }
 }
 /*# sourceMappingURL=main.css.map */

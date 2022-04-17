@@ -2,12 +2,18 @@ header {
     width: 100%;
     padding: 1.5rem;
     @include flexbox(center, space-between, column, 2rem);
+    @media(min-width: $size) {
+        flex-direction: row;
+    }
     .header__main {
         width: 100%;
         @include flexbox(center, space-between, row, 2rem);
         .header__nav-toggle-close { display: none; }
         .header__nav-toggle-open { cursor: pointer; }
         .logo { font-size: clamp(1.5rem, 2.25vw, 3.75rem); font-weight: 700; }
+        @media(min-width: $size) {
+            .header__nav-toggle-close, .header__nav-toggle-open { display: none; }
+        }
     }
     nav.active {
         display: flex;
@@ -20,6 +26,13 @@ header {
         position: absolute;
         top: 0;
         animation: fade .5s ease;
+        @media(min-width: $size) {
+            display: flex;
+            background: transparent;
+            position: relative;
+            height: auto;
+            width: auto;
+        }
         svg {
             cursor: pointer;
             position: absolute;
@@ -29,7 +42,17 @@ header {
         ul {
             width: 100%;
             @include flexbox(center, center, column, 5rem);
-            li { animation: fade 1s; }
+            @media(min-width: $size) {
+                .header__nav-toggle-close { display: none; }
+                flex-direction: row;
+                gap: 2rem;
+            }
+            li { 
+                animation: fade 1s; 
+                @media(min-width: $size) {
+                    animation: none;
+                }
+            }
         }
     }
 }

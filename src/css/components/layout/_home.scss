@@ -1,14 +1,32 @@
 main {
     width: 100%;
-    padding-top: 5rem;
+    padding: 5rem 1.5rem 0 1.5rem;
     @include flexbox(center, center, column, 0);
+    @media (min-width: $size) {
+        justify-content: space-between;
+        flex-direction: row;
+        padding: 0 1.5rem;
+    }
     .text-container {
         @include flexbox(0, 0, column, 1.5rem);
         h1 { line-height: 1.2; } 
+        @media (min-width: $size) {
+            width: 60%;
+        }
     }
     .image-container {
         width: 100%;
         @include flexbox(center, center, 0, 0);
         .image { width: 350px; height: auto; }
+        @media (min-width: $size) {
+            justify-content: flex-end;
+            width: 40%;
+        }
+        @media (min-width: 920px) {
+            .image { width: 400px; }
+        }
+        @media (min-width: 1024px) {
+            .image { width: 500px; }
+        }
     }
 }
