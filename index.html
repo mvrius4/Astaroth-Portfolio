@@ -4,7 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astaroth Portfolio</title>
+
+    <title>Astaroth's Portfolio</title>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="description" content="Hello, you can call me Chris, and this is my journey. I enjoy to work in 3D since it sets creativity free and may even end up as art which might inspire others." />
+    <link rel="canonical" href="https://astaroth-portfolio.vercel.app"/>
+    <meta property="og:title" content="mvrius - Graphic and Web Design - Portfolio" />
+    <meta property="og:description" content="Hello, you can call me Chris, and this is my journey. I enjoy to work in 3D since it sets creativity free and may even end up as art which might inspire others." />
+    <meta property="og:site_name" content="Astaroth" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_EN" />
+    <meta property="og:url" content="https://astaroth-portfolio.vercel.app" />
+    <meta property="og:image" content="change" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:image:alt" content="Astaroth's Portfolio" />
+    <meta name="twitter:site" content="change" />
+    <meta name="twitter:creator" content="change" />
+    <meta name="twitter:card" content="summary_large_image" />
+	<meta name="keywords" content="Portfolio, Astaroth, Website, Blender, 3D, 3D Modelling, Landing Page, Design, Site, Creativity, Inspire"/>
+	<meta name="author" content="mvrius"/>
+	<meta name="copyright" content="mvrius"/>
+	<meta name="robots" content="index, follow"/>
+
 
     <link rel="stylesheet" href="./src/css/main.css">
     <script src="./src/js/script.js" defer></script>
@@ -29,29 +51,38 @@
             </ul>
         </nav>
     </header>
+    <svg class="blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#00FF75" d="M42.2,-33.5C55.7,-16.7,68.4,0.9,66,16.5C63.6,32.2,46.1,45.9,29.4,49.5C12.7,53.1,-3.3,46.5,-19.8,39.3C-36.4,32.1,-53.5,24.1,-58.2,11.2C-62.8,-1.8,-54.9,-19.6,-43.2,-36C-31.4,-52.4,-15.7,-67.3,-0.7,-66.8C14.4,-66.2,28.7,-50.3,42.2,-33.5Z" transform="translate(100 100)" />
+    </svg>
     <main>
-        <div class="text-container">
-            <h1>Hi, I'm <span>Astaroth</span></h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Aliquam quibusdam porro amet hic corrupti libero ratione deleniti excepturi beatae nemo, 
-                pariatur velit accusamus doloribus animi, nulla consequatur cum, 
-                laudantium laboriosam neque. Aut ab placeat consequuntur!
+        <div itemscope="" itemtype="https://schema.org/WebPage"  class="text-container">
+            <h1 itemprop="name">Hi, I'm <span>Astaroth</span></h1>
+            <p itemprop="description">
+                Hello, you can call me Chris, and this is my journey.
+                I enjoy to work in 3D since it sets creativity free and may 
+                even end up as art which might inspire others. 
+                I've been using Blender for one year and I'm pretty confident in my skills, 
+                though, there's still place to learn as learning never stops but 
+                I'm ready for any challenge you might come up with.
+            </p>
+            <p itemprop="description">
+                My commisions usually don't take too long and I take 
+                in mind to model with as less triangles as possible, clean normals and uv maps.
             </p>
         </div>
         <div class="image-container">
             <img class="image" src="./src/img/97.png" alt="Home Page Image" width="500px" height="700px" />
         </div>
     </main>
-    <section id="gallery" class="gallery reveal">
-        <h2>Gallery</h2>
+    <section itemscope itemtype="https://schema.org/ItemList" id="gallery" class="gallery">
+        <h2 itemprop="name">Gallery</h2>
         <div class="gallery__btn-container">
             <button class="primary" id="wpn">Weapons</button>
             <button class="primary" id="bld">Builds</button>
             <button class="primary" id="veh">Vehicles</button>
             <button class="primary" id="oth">Others</button>
         </div>
-        <div class="tab weapons-tab reveal reveal-on active" id="weapons">
+        <div itemprop="itemListElement" class="tab weapons-tab active" id="weapons">
             <div class="gallery__creations">
                 <div class="gallery__latest">
                     <h3>Lastest creation</h3>
@@ -70,7 +101,7 @@
                 </div>
             </div>
         </div>
-        <div class="tab builds-tab reveal" id="builds">
+        <div itemprop="itemListElement" class="tab builds-tab" id="builds">
             <div class="gallery__creations">
                 <div class="gallery__latest">
                     <h3>Lastest creation</h3>
@@ -87,7 +118,7 @@
                 </div>
             </div>
         </div>
-        <div class="tab vehicles-tab reveal" id="vehicles">
+        <div itemprop="itemListElement" class="tab vehicles-tab" id="vehicles">
             <div class="gallery__creations">
                 <div class="gallery__latest">
                     <h3>Lastest creation</h3>
@@ -107,7 +138,7 @@
                 </div>
             </div>
         </div>
-        <div class="tab others-tab reveal" id="others">
+        <div itemprop="itemListElement" class="tab others-tab" id="others">
             <div class="gallery__creations">
                 <div class="gallery__latest">
                     <h3>Lastest creation</h3>
@@ -127,7 +158,7 @@
         </div>
     </section>
     <footer>
-        <p>Created by <a href="https://github.com/mvrius69" target="_blank" rel="Creator Github Page">mvrius</a>. Astaroth official portfolio.</p>
+        <p>Created by <a href="https://github.com/mvrius69" target="_blank" rel="Creator Github Page">mvrius</a>. Astaroth's official portfolio.</p>
     </footer>
 </body>
 </html>
