@@ -13,10 +13,6 @@ const builds = document.getElementById("builds");
 const vehicles = document.getElementById("vehicles");
 const others = document.getElementById("others");
 
-const reveals = document.querySelectorAll('.reveal');
-const windowheight = window.innerHeight;
-const revealpoint = 150;
-
 navOpener.addEventListener("click", () => {
     if(nav.classList == "active") return;
     nav.classList.add("active");
@@ -56,12 +52,3 @@ othersBtn.addEventListener("click", () => {
     handleRemoveActive();
     handleAddActive(others);
 })
-
-window.addEventListener('scroll', () => {
-    for(let i = 0; i < reveals.length; i++) {
-        let revealtop = reveals[i].getBoundingClientRect().top;
-        if(revealtop < windowheight - revealpoint) {
-            reveals[i].classList.add('reveal-on');
-        }
-    }
-});
